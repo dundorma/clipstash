@@ -1,3 +1,5 @@
 /target
 *.db*
 Cargo.lock
+.env
+.vscode
