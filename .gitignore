@@ -2,4 +2,4 @@
 *.db*
 Cargo.lock
 .env
-.vscode
+/.vscode
