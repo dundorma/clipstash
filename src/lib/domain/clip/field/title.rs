@@ -36,6 +36,6 @@ impl Default for Title {
 impl FromStr for Title {
     type Err = Clip;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self::new(s.to_string()))
+        Ok(Self::new(s.to_owned()))
     }
 }
