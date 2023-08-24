@@ -1,4 +1,4 @@
-use super::super::ClipError;
+use crate::domain::clip::ClipError;
 use crate::domain::time::Time;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;

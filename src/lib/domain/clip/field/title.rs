@@ -1,5 +1,3 @@
-use crate::domain::clip::Clip;
-
 use super::super::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
@@ -34,7 +32,7 @@ impl Default for Title {
 }
 
 impl FromStr for Title {
-    type Err = Clip;
+    type Err = ClipError;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         Ok(Self::new(s.to_owned()))
     }

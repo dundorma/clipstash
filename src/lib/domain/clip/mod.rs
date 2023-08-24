@@ -1,7 +1,5 @@
 pub mod field;
 
-use std::error;
-
 use chrono;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
