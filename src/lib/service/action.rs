@@ -3,6 +3,10 @@ use crate::service::ask;
 use crate::{domain::Clip, service::ServiceError, ShortCode};
 use std::convert::TryInto;
 
+pub async fn new_clip(req: ask::NewClip, pool: &DatabasePool) -> Result<Clip, ServiceError> {
+    Ok(query::new_clip(req, pool).await?.try_into()?)
+}
+
 pub async fn get_clip(req: ask::GetClip, pool: &DatabasePool) -> Result<Clip, ServiceError> {
     let user_password = req.password.clone();
     let clip: Clip = query::get_clip(req, pool).await?.try_into()?;
