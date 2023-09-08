@@ -3,7 +3,7 @@ use rocket::form::FromForm;
 use serde::Serialize;
 
 #[derive(Debug, Serialize, FromForm)]
-pub struct NewField {
+pub struct NewClip {
     pub content: field::Content,
     pub title: field::Title,
     pub expires: field::Expires,
