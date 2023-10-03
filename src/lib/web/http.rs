@@ -1,5 +1,3 @@
-use std::os::linux::raw::stat;
-
 use crate::data::AppDatabase;
 use crate::domain::clip::field::Password;
 use crate::service;

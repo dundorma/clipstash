@@ -5,8 +5,8 @@ use crate::ServiceError;
 use rocket::http::{CookieJar, Status};
 use rocket::request::{FromRequest, Outcome, Request};
 use rocket::serde::json::Json;
+use rocket::Responder;
 use rocket::State;
-use rocket::{post, Responder};
 use serde::Serialize;
 use std::str::FromStr;
 
