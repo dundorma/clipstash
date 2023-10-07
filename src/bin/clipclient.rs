@@ -113,7 +113,25 @@ fn run(opt: Opt) -> Result<(), Box<dyn Error>> {
             password,
             expires,
             title,
-        } => todo!(),
+        } => {
+            let password = password.unwrap_or_default();
+            let svc_req = GetClip {
+                password: password.clone(),
+                shortcode: shortcode.clone(),
+            };
+            let original_clip = get_clip(opt.addr.as_str(), svc_req, opt.api_key.clone())?;
+            let svc_req = UpdateClip {
+                content: Content::new(clip.as_str())?,
+                expires: expires.unwrap_or(original_clip.expires),
+                title: title.unwrap_or(original_clip.title),
+                password,
+                shortcode,
+            };
+
+            let clip = update_clip(opt.addr.as_str(), svc_req, opt.api_key)?;
+            println!("{:#?}", clip);
+            Ok(())
+        }
     }
 }
 
